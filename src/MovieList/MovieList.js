@@ -2,7 +2,7 @@ import React from 'react'
 import Movie from '../Movie/Movie'
 
 const MovieList = ({ movies }) => {
-  const movieTiles = props.movies.map(movie => {
+  const movieTiles = movies.map(movie => {
     return (
       <Movie
         id={movie.id}
@@ -14,7 +14,7 @@ const MovieList = ({ movies }) => {
       />
     )
   })
-  return <p>Movies go here!</p>
+  return <div>{movieTiles}</div>
 }
 
 export default MovieList
