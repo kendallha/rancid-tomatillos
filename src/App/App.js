@@ -1,4 +1,5 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
+import MovieList from '../MovieList/MovieList'
 import movieData from '../mockData'
 
 class App extends Component {
@@ -10,7 +11,12 @@ class App extends Component {
   }
 
   render() {
-    return <h1>Placeholder!</h1>
+    return (
+      <main>
+        <MovieList movies={ this.state.movies }/>
+        <h1>Placeholder!</h1>
+      </main>
+    )
   }
 }
 
