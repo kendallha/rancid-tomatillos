@@ -1,5 +1,6 @@
 import React from 'react'
-import Movie from '../Movie/Movie'
+import Movie from '../Movie/Movie';
+import './MovieList.css';
 
 const MovieList = ({ movies }) => {
   const movieTiles = movies.map(movie => {
@@ -11,10 +12,11 @@ const MovieList = ({ movies }) => {
         title={movie.title}
         rating={movie.average_rating}
         releaseDate={movie.release_date}
+        key={movie.id}
       />
     )
   })
-  return <div>{movieTiles}</div>
+  return <div className="movie-list">{movieTiles}</div>
 }
 
 export default MovieList
