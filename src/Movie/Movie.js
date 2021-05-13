@@ -8,9 +8,7 @@ const Movie = ({ id, poster, rating, releaseDate, title }) => {
       <img className='poster-image' src={poster} />
       <p className='rating'>{rating.toFixed(1)}</p>
       </div>
-      {/* <div className='rating'></div> */}
       <div className='movie-label'>
-        {/* <p className='rating'>{Math.round(rating)}</p> */}
         <h3 className='title'>{title}</h3>
         <p>Release date: {releaseDate}</p>
       </div>
