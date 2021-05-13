@@ -2,5 +2,5 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5em;
-  padding: 4em;
+  padding: 2em 4em 4em 4em;
 }
