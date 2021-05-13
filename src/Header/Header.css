@@ -1,0 +1,15 @@
+.header {
+  display: grid;
+  grid-template-rows: 40% 60%;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 3.3em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.app-name {
+  padding-left: 2em;
+}
