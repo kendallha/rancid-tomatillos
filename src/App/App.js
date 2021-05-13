@@ -19,12 +19,16 @@ class App extends Component {
     this.setState({ selectedMovie: clickedMovie });
   }
 
+  goBacktoMainView = () => {
+    this.setState({ selectedMovie: null });
+  }
+
   render() {
     return (
       <main className='main'>
       <Header />
         {!this.state.selectedMovie && <MovieList movies={ this.state.movies } handleClick={this.handleClick}/>}
-        {this.state.selectedMovie && <MovieDetail movie={this.state.selectedMovie}/>}
+        {this.state.selectedMovie && <MovieDetail movie={this.state.selectedMovie} goBack={this.goBacktoMainView}/>}
       </main>
     )
   }
