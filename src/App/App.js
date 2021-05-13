@@ -10,24 +10,21 @@ class App extends Component {
     super();
     this.state = {
       movies: movieData.movies,
-      clickedMovieId: null
+      selectedMovie: null
     }
   }
 
-  handleClick = event => {
-    this.setState({ clickedMovieId: event.target.id });
-  }
-
-  findMovieFromId = () => {
-    return this.state.movies.find(movie => movie.id === this.state.clickedMovieId);
+  handleClick = (id) => {
+    const clickedMovie = this.state.movies.find(movie => movie.id === id);
+    this.setState({ selectedMovie: clickedMovie });
   }
 
   render() {
     return (
       <main className='main'>
       <Header />
-        {!this.state.movieClicked && <MovieList movies={ this.state.movies } handleClick={this.handleClick()}/>}
-        <MovieDetail movie={this.findMovieFromId()}/>
+        {!this.state.selectedMovie && <MovieList movies={ this.state.movies } handleClick={this.handleClick}/>}
+        <MovieDetail movie={this.state.selectedMovie}/>
       </main>
     )
   }

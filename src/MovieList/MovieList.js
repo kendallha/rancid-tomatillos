@@ -6,7 +6,7 @@ const MovieList = ({ movies, handleClick }) => {
   const movieTiles = movies.map(movie => {
     return (
       <Movie
-        handleClick={movie.handleClick}
+        handleClick={handleClick}
         id={movie.id}
         poster={movie.poster_path}
         backdrop={movie.backdrop_path}

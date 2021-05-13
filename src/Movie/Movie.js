@@ -3,9 +3,8 @@ import './Movie.css';
 
 const Movie = ({ handleClick, id, poster, rating, releaseDate, title }) => {
 
-  
   return(
-    <article id={id} className='movie' onClick={handleClick}>
+    <article id={id} className='movie' onClick={() => handleClick(id)}>
       <div className='poster-section'>
       <img className='poster-image' src={poster} />
       <p className='rating'>{rating.toFixed(1)}</p>
