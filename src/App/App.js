@@ -24,7 +24,7 @@ class App extends Component {
       <main className='main'>
       <Header />
         {!this.state.selectedMovie && <MovieList movies={ this.state.movies } handleClick={this.handleClick}/>}
-        <MovieDetail movie={this.state.selectedMovie}/>
+        {this.state.selectedMovie && <MovieDetail movie={this.state.selectedMovie}/>}
       </main>
     )
   }
