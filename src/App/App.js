@@ -17,7 +17,6 @@ class App extends Component {
       <main className='main'>
       <Header />
         <MovieList movies={ this.state.movies }/>
-        <h1>Placeholder!</h1>
       </main>
     )
   }
