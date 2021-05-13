@@ -1,3 +1,13 @@
 .header {
-  grid-area: header;
+  display: grid;
+  /* grid-template-columns: 25% 75%; */
+  grid-template-rows: 40% 60%;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.app-name {
+  padding-left: 2em;
 }
