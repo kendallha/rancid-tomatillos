@@ -26,8 +26,11 @@ class App extends Component {
   render() {
     return (
       <main className='main'>
-      <Header />
-        {!this.state.selectedMovie && <MovieList movies={ this.state.movies } handleClick={this.handleClick}/>}
+
+        {!this.state.selectedMovie && <>
+          <Header />
+          <MovieList movies={ this.state.movies } handleClick={this.handleClick}/>
+        </>}
         {this.state.selectedMovie && <MovieDetail movie={this.state.selectedMovie} goBack={this.goBacktoMainView}/>}
       </main>
     )

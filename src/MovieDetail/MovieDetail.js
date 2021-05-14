@@ -7,7 +7,7 @@ const MovieDetail = ( {movie, goBack} ) => {
       <button onClick={() => goBack()}>Back to All</button>
       <article className='movie-expanded'>
         <img className='poster-image' src={movie.poster_path} />
-        <p className='rating'>{movie.average_rating.toFixed(1)}</p>
+        <p className='average-rating'>{movie.average_rating.toFixed(1)}</p>
         <h3 className='title'>{movie.title}</h3>
         <p>Release date: {movie.release_date}</p>
         <p>{movie.genres}</p>
@@ -16,7 +16,7 @@ const MovieDetail = ( {movie, goBack} ) => {
         <p>Revenue: {movie.revenue}</p>
         <p>Runtime: {movie.runtime} minutes</p>
         <p>{movie.overview}</p>
-        <img src={movie.backdrop_path} />
+        <img className='backdrop-image' src={movie.backdrop_path} />
       </article>
     </div>
   )
