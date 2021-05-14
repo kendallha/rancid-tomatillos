@@ -3,12 +3,21 @@ import './MovieDetail.css';
 
 const MovieDetail = ( {movie, goBack} ) => {
   return (
-    <div>
+    <div style={{
+      backgroundImage: 'url('+ movie.backdrop_path +')',
+      backgroundPosition: 'center center',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
+      backgroundSize: 'cover',
+      backgroundColor: '#324653'
+    }}>
       <button onClick={() => goBack()}>Back to All</button>
+
       <article className='movie-expanded'>
-        <img className='poster-image' src={movie.poster_path} />
+        {/* <img className='backdrop-image' src={movie.backdrop_path} /> */}
+        <img className='poster' src={movie.poster_path} />
         <p className='average-rating'>{movie.average_rating.toFixed(1)}</p>
-        <h3 className='title'>{movie.title}</h3>
+        <h3 className='movie-title'>{movie.title}</h3>
         <p>Release date: {movie.release_date}</p>
         <p>{movie.genres}</p>
         <p>{movie.tagline}</p>
@@ -16,8 +25,8 @@ const MovieDetail = ( {movie, goBack} ) => {
         <p>Revenue: {movie.revenue}</p>
         <p>Runtime: {movie.runtime} minutes</p>
         <p>{movie.overview}</p>
-        <img className='backdrop-image' src={movie.backdrop_path} />
       </article>
+      <div className='divider'>/</div>
     </div>
   )
 }
