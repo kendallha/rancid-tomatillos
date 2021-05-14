@@ -25,7 +25,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
       <main className='main'>
         {!this.state.selectedMovie && <>
           <Header />

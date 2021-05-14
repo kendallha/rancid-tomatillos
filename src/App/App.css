@@ -1,7 +1,9 @@
-html, body {
+
+html, body, .root, .container {
   height: 100%;
   width: 100%;
   margin: 0;
+  background-color: #324653;
 }
 
 .main {
