@@ -11,9 +11,11 @@ const MovieDetail = ( {movie, goBack} ) => {
       {/* <div className='background' style={{
         backgroundImage: 'url('+ movie.backdrop_path +')'
       }}></div> */}
-        <div className='poster-wrapper'>
-          <img className='poster' src={movie.poster_path} />
-          <p className='average-rating'>{movie.average_rating.toFixed(1)}</p>
+        <div className='double-poster-wrapper'>
+          <div className='poster-wrapper'>
+            <img className='poster' src={movie.poster_path} />
+            <p className='average-rating'>{movie.average_rating.toFixed(1)}</p>
+          </div>
         </div>
         {/* <div className='info-section'> */}
           <h3 className='movie-title'>{movie.title}</h3>
