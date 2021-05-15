@@ -1,9 +1,10 @@
 import React from 'react';
 import './Movie.css';
 
-const Movie = ({ id, poster, rating, releaseDate, title }) => {
+const Movie = ({ handleClick, id, poster, rating, releaseDate, title }) => {
+
   return(
-    <article className='movie'>
+    <article id={id} className='movie' onClick={() => handleClick(id)}>
       <div className='poster-section'>
       <img className='poster-image' src={poster} />
       <p className='rating'>{rating.toFixed(1)}</p>
