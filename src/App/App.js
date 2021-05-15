@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import MovieList from '../MovieList/MovieList';
 import Header from '../Header/Header';
-// import movieData from '../mockData';
 import './App.css';
 import MovieDetail from '../MovieDetail/MovieDetail';
 import { getAllMovies, getMovieDetails } from '../api-calls/api-calls';
@@ -50,6 +49,9 @@ class App extends Component {
           <Header />
           <MovieList movies={ this.state.movies } handleClick={this.handleClick}/>
         </>}
+        {!this.state.movies.length && !this.state.error && <>
+          <h1 className='loading-message'>Movies are on the way!</h1>
+          </>}
       </main>
       {this.state.selectedMovie && <MovieDetail movie={this.state.selectedMovie} goBack={this.goBacktoMainView}/>}
       </div>

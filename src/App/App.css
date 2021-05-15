@@ -12,7 +12,8 @@ html, body, .root, .container {
   font-family: 'Farro', sans-serif;
 }
 
-.error-message {
+.error-message,
+.loading-message {
   text-align: center;
   word-spacing: 70%
 }
