@@ -28,7 +28,6 @@ class App extends Component {
     this.setState({ selectedMovie: null });
   }
 
-
   handleClick = (id) => {
     getMovieDetails(id)
       .then(data => {
@@ -38,22 +37,22 @@ class App extends Component {
         { error: 'Something went wrong, please try again later.' }))
   }
 
-
   render() {
     return (
       <div className="container">
-      <main className='main'>
-        {this.state.error &&
-          <h1 className='error-message'>{this.state.error}</h1>}
-        {!this.state.selectedMovie && !this.state.error && <>
-          <Header />
-          <MovieList movies={ this.state.movies } handleClick={this.handleClick}/>
-        </>}
-        {!this.state.movies.length && !this.state.error && <>
-          <h1 className='loading-message'>Movies are on the way!</h1>
+        <main className='main'>
+          {this.state.error &&
+            <h1 className='error-message'>{this.state.error}</h1>}
+          {!this.state.selectedMovie && !this.state.error && <>
+            <Header />
+            <MovieList movies={ this.state.movies } handleClick={this.handleClick}/>
           </>}
-      </main>
-      {this.state.selectedMovie && <MovieDetail movie={this.state.selectedMovie} goBack={this.goBacktoMainView}/>}
+          {!this.state.movies.length && !this.state.error && <>
+            <h1 className='loading-message'>Movies are on the way!</h1>
+            </>}
+        </main>
+        {this.state.selectedMovie &&
+          <MovieDetail movie={this.state.selectedMovie} goBack={this.goBacktoMainView}/>}
       </div>
     )
   }
