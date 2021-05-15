@@ -1,25 +1,31 @@
 .movie-detail-wrapper {
-  background-color: #324653;
+  /* background-color: #324653; */
   height: 100%;
   margin: 0;
   font-family: 'Farro', sans-serif;
-}
-
-.movie-expanded{
-  height: 75%;
-  margin: 5%;
-  box-shadow: 5px 0px 10px 5px rgb(22, 39, 49);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  position: relative;
+}
+
+.fas {
+  color: white;
+  margin-left: 5%;
+  margin-top: 3%;
+  width: 500px;
+}
+
+.movie-expanded{
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 .info-section {
   background-color:rgba(255,255,255, 0.8);
   position: absolute;
-  bottom: 2%;
+  bottom: 5%;
   left: 2%;
   width: 60%;
   padding-left: 5%;
@@ -65,6 +71,7 @@
 .movie-title {
   font-size: 2em;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .top-card {
@@ -76,10 +83,11 @@
  font-style: italic;
 }
 
-.movie-details-aside {
+/* .movie-details-aside {
   padding-top: 4%;
-}
+} */
 
 .tagline {
   font-size: 1.3em;
+  text-align: center;
 }

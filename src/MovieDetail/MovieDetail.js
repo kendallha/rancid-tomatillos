@@ -3,14 +3,11 @@ import './MovieDetail.css';
 
 const MovieDetail = ( {movie, goBack} ) => {
   return (
-    <div className='movie-detail-wrapper'>
-      <button onClick={() => goBack()}>Back to All</button>
-      <article className='movie-expanded' style={{
+    <div className='movie-detail-wrapper' style={{
         backgroundImage: 'url('+ movie.backdrop_path +')'
-      }} >
-      {/* <div className='background' style={{
-        backgroundImage: 'url('+ movie.backdrop_path +')'
-      }}></div> */}
+      }}>
+      <article className='movie-expanded'>
+      <i onClick={() => goBack()} className="fas fa-arrow-left fa-2x"></i>
         <div className='double-poster-wrapper'>
           <div className='poster-wrapper'>
             <img className='poster' src={movie.poster_path} />
@@ -18,18 +15,17 @@ const MovieDetail = ( {movie, goBack} ) => {
           </div>
         </div>
         <div className='info-section'>
-        <div className='top-card'>
-          <div className='main-details'>
-            <h3 className='movie-title'>{movie.title}</h3>
-            <p className='tagline'>{movie.tagline}</p>
-            <p>{movie.genres}</p>
-          </div>
-          <div className='movie-details-aside'>
-            <p>Runtime: {movie.runtime} minutes</p>
-            <p>Release date: {movie.release_date}</p>
-            <p>Budget: ${movie.budget.toLocaleString()}</p>
-            <p>Revenue: ${movie.revenue.toLocaleString()}</p>
-          </div>
+          <h3 className='movie-title'>{movie.title} ({movie.release_date.substring(0,4)})</h3>
+          <p className='tagline'>{movie.tagline}</p>
+          <div className='top-card'>
+            <div className='main-details'>
+              <p>{movie.genres}</p>
+              <p>{movie.runtime} minutes</p>
+            </div>
+            <div className='movie-details-aside'>
+              <p>Budget: ${movie.budget.toLocaleString()}</p>
+              <p>Revenue: ${movie.revenue.toLocaleString()}</p>
+            </div>
           </div>
           <p>{movie.overview}</p>
         </div>
