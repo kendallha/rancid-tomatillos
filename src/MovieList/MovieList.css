@@ -1,17 +1,19 @@
-@media only screen and (min-width: 1001px) {
 .movie-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 5em;
   padding: 2em 4em 4em 4em;
 }
-}
+
 
 @media only screen and (max-width: 1100px) {
   .movie-list {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 5em;
-    padding: 2em 4em 4em 4em;
+  }
+}
+
+@media only screen and (max-width: 676px) {
+  .movie-list {
+    display: block;
   }
 }
