@@ -31,8 +31,12 @@ class App extends Component {
 
 
   handleClick = (id) => {
-    const clickedMovie = this.state.movies.find(movie => movie.id === id);
-    this.setState({ selectedMovie: clickedMovie });
+    getMovieDetails(id)
+      .then(data => {
+        this.setState({ selectedMovie: data.movie })
+      })
+      .catch(() => this.setState(
+        { error: 'There was an issue connnecting to the server. Please try again later' }))
   }
 
 
