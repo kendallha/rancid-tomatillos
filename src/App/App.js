@@ -22,7 +22,7 @@ class App extends Component {
       this.setState({ movies: data.movies })
     })
     .catch(() => this.setState(
-      { error: 'There was an issue connnecting to the server. Please try again later' }))
+      { error: 'Something went wrong, please try again later.' }))
   }
 
   goBacktoMainView = () => {
@@ -36,7 +36,7 @@ class App extends Component {
         this.setState({ selectedMovie: data.movie })
       })
       .catch(() => this.setState(
-        { error: 'There was an issue connnecting to the server. Please try again later' }))
+        { error: 'Something went wrong, please try again later.' }))
   }
 
 
@@ -45,8 +45,8 @@ class App extends Component {
       <div className="container">
       <main className='main'>
         {this.state.error &&
-          <h1>{this.state.error}</h1>}
-        {!this.state.selectedMovie && <>
+          <h1 className='error-message'>{this.state.error}</h1>}
+        {!this.state.selectedMovie && !this.state.error && <>
           <Header />
           <MovieList movies={ this.state.movies } handleClick={this.handleClick}/>
         </>}
