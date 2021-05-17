@@ -1,6 +1,9 @@
 describe('AllMovieView', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
+      cy.fixture('movies').then((movies) => {
+      cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { body: movies }).as('movies')
+      })
   })
 
   it('should display the app name when the page loads', () => {
@@ -14,4 +17,8 @@ describe('AllMovieView', () => {
   it('should display all of the movies when the page loads', () => {
     cy.get('.movie-list').children().should('have.length', 40)
   })
+
+  // it('should show basic information for each movie displayed', () => {
+  //   cy.get('.movie').contains('img')
+  // })
 })
