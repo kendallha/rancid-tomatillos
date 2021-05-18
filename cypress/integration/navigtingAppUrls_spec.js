@@ -26,4 +26,12 @@ describe('navigating urls', () => {
     cy.get('#1').click()
     cy.url().should('include', '/1')
   })
+
+  it('should be able to use the browser\'s back and forth buttons to navigate', () => {
+    cy.get('#1').click()
+      .go('back')
+      .url().should('eq', 'http://localhost:3000/')
+      .go('forward')
+      .url().should('eq', 'http://localhost:3000/1')
+  })
 })
