@@ -4,7 +4,7 @@ describe('AllMovieView', () => {
       cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', { body: movies }).as('movies')
     })
     cy.visit('http://localhost:3000/')
-    // .intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movies' })
+
   })
 
   it('should display the app name when the page loads', () => {
