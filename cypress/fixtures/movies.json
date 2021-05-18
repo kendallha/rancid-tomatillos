@@ -1,4 +1,6 @@
     {
+      "movies": [
+      {
       "id": 1, 
       "title": "Fake Movie Title", 
       "poster_path": "https://image.tmdb.org/t/p/original//7G2VvG1lU8q758uOqU6z2Ds0qpA.jpg", 
@@ -331,4 +333,6 @@
       "title": "I Still Believe",
       "average_rating": 3.8333333333333335,
       "release_date": "2020-03-12"
+    }
+    ]
     }

@@ -2,7 +2,7 @@ describe('AllMovieView', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
       cy.fixture('movies').then((movies) => {
-      cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { body: movies }).as('movies')
+      cy.intercept("GET", 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { body: movies })
       })
   })
 
@@ -18,7 +18,7 @@ describe('AllMovieView', () => {
     cy.get('.movie-list').children().should('have.length', 40)
   })
 
-  // it('should show basic information for each movie displayed', () => {
-  //   cy.get('.movie').contains('img')
-  // })
+  it('should show basic information for each movie displayed', () => {
+    cy.get('.movie').contains('img')
+  })
 })
