@@ -17,7 +17,6 @@ const MovieList = ({ movies, handleClick }) => {
       />
     )
   })
-  console.log("movieTiles",movieTiles.length)
   return <div className="movie-list">{movieTiles}</div>
 }
 
