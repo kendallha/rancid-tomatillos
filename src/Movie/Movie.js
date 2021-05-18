@@ -11,7 +11,7 @@ const Movie = ({ handleClick, id, poster, rating, releaseDate, title }) => {
       </div>
       <div className='movie-label'>
         <h3 className='title'>{title}</h3>
-        <p>Release date: {releaseDate}</p>
+        <p className='release-date'>Release date: {releaseDate}</p>
       </div>
     </article>
   )
