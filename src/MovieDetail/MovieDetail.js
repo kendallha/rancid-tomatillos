@@ -30,7 +30,7 @@ const MovieDetail = ( {movie, goBack} ) => {
             <p>Revenue: ${movie.revenue.toLocaleString()}</p>
           </div>
         </div>
-        <p>{movie.overview}</p>
+        <p className='overview'>{movie.overview}</p>
         </div>
       </article>
     </div>
