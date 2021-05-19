@@ -25,19 +25,6 @@ class App extends Component {
       { error: 'Something went wrong, please try again later.' }))
   }
 
-  goBacktoMainView = () => {
-    this.setState({ selectedMovie: null });
-  }
-
-  handleClick = (id) => {
-    getMovieDetails(id)
-      .then(data => {
-        this.setState({ selectedMovie: data.movie })
-      })
-      .catch(() => this.setState(
-        { error: 'Something went wrong, please try again later.' }))
-  }
-
   render() {
     return (
       <div className="container">
@@ -51,12 +38,16 @@ class App extends Component {
           <Route path='/' render={() =>
             <>
               <Header />
-              <MovieList movies={ this.state.movies } handleClick={this.handleClick}/>
+              <MovieList movies={ this.state.movies } />
             </>
           }/>
         </main>
-        {this.state.selectedMovie &&
-          <MovieDetail movie={this.state.selectedMovie} goBack={this.goBacktoMainView}/>}
+        <Route exact path='/:id' render={({ match }) => {
+          const { id } = match.params
+          return <MovieDetail id={ parseInt(id) } />
+        }
+        }/>
+
       </div>
     )
   }

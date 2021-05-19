@@ -2,11 +2,10 @@ import React from 'react'
 import Movie from '../Movie/Movie';
 import './MovieList.css';
 
-const MovieList = ({ movies, handleClick }) => {
+const MovieList = ({ movies }) => {
   const movieTiles = movies.map(movie => {
     return (
       <Movie
-        handleClick={handleClick}
         id={movie.id}
         poster={movie.poster_path}
         backdrop={movie.backdrop_path}
