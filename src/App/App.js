@@ -3,20 +3,20 @@ import MovieList from '../MovieList/MovieList';
 import Header from '../Header/Header';
 import './App.css';
 import MovieDetail from '../MovieDetail/MovieDetail';
-import { getAllMovies, getMovieDetails } from '../api-calls/api-calls';
-import { Route } from 'react-router-dom';
+import { getAllMovies } from '../api-calls/api-calls';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       movies: [],
-      selectedMovie: null,
       error:''
     }
   }
 
   componentDidMount() {
+    console.log(window.location);
     getAllMovies()
     .then(data => {
       this.setState({ movies: data.movies })
@@ -32,22 +32,26 @@ class App extends Component {
           {this.state.error &&
             <h1 className='error-message'>{this.state.error}</h1>}
 
-          {!this.state.movies.length && !this.state.error && <>
+          {!this.state.movies.length && !this.state.error &&
             <h1 className='loading-message'>Movies are on the way!</h1>
-            </>}
-          <Route path='/' render={() =>
-            <>
+            }
+        <Switch>
+         <Route exact path='/' render={() =>
+           { return ( <>
               <Header />
               <MovieList movies={ this.state.movies } />
             </>
+           )
+          }
           }/>
-        </main>
-        <Route exact path='/:id' render={({ match }) => {
+        <Route path='/:id' render={({ match }) => {
           const { id } = match.params
-          return <MovieDetail id={ parseInt(id) } />
+          console.log(match);
+           return <MovieDetail id={ parseInt(id) } />
         }
         }/>
-
+          </Switch>
+         </main>
       </div>
     )
   }

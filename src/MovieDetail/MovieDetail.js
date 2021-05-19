@@ -6,13 +6,13 @@ class MovieDetail extends Component{
   constructor() {
     super()
     this.state = {
-      movie: {},
+      movie: null,
       error: ''
     }
   }
 
   componentDidMount() {
-    getMovieDetails(id)
+    getMovieDetails(this.props.id)
       .then(data => {
         this.setState({ movie: data.movie })
       })
@@ -21,13 +21,18 @@ class MovieDetail extends Component{
   }
 
   render() {
+    const { movie } = this.state;
+    console.log(movie);
+    if (!this.state.movie) {
+    return (<h1>Loading...</h1>)
+    }
     return (
       <div className='movie-detail-wrapper' style={{
           backgroundImage: 'url('+ movie.backdrop_path +')'
         }}>
         <article className='movie-expanded'>
-        className="fas fa-arrow-circle-left fa-3x"
-        role='button'>
+        <i className="fas fa-arrow-circle-left fa-3x"
+        role='button'></i>
         <div className='double-poster-wrapper'>
           <div className='poster-wrapper'>
             <img className='poster' src={movie.poster_path} />
@@ -53,6 +58,7 @@ class MovieDetail extends Component{
       </div>
     )
   }
+  
 }
 
 export default MovieDetail;
