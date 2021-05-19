@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import './App.css';
 import MovieDetail from '../MovieDetail/MovieDetail';
 import { getAllMovies, getMovieDetails } from '../api-calls/api-calls';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -43,13 +44,16 @@ class App extends Component {
         <main className='main'>
           {this.state.error &&
             <h1 className='error-message'>{this.state.error}</h1>}
-          {!this.state.selectedMovie && !this.state.error && <>
-            <Header />
-            <MovieList movies={ this.state.movies } handleClick={this.handleClick}/>
-          </>}
+
           {!this.state.movies.length && !this.state.error && <>
             <h1 className='loading-message'>Movies are on the way!</h1>
             </>}
+          <Route path='/' render={() =>
+            <>
+              <Header />
+              <MovieList movies={ this.state.movies } handleClick={this.handleClick}/>
+            </>
+          }/>
         </main>
         {this.state.selectedMovie &&
           <MovieDetail movie={this.state.selectedMovie} goBack={this.goBacktoMainView}/>}
