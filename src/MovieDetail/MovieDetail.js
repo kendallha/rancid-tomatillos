@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getMovieDetails } from '../api-calls/api-calls'
 import './MovieDetail.css';
+import { Link } from 'react-router-dom'
 
 class MovieDetail extends Component{
   constructor() {
@@ -22,8 +23,9 @@ class MovieDetail extends Component{
 
   render() {
     const { movie } = this.state;
-    console.log(movie);
-    if (!this.state.movie) {
+    if (!this.state.movie && this.state.error) {
+      return <h1 className='error-message'>{this.state.error}</h1>
+    } else if (!this.state.movie) {
     return (<h1>Loading...</h1>)
     }
     return (
@@ -31,8 +33,11 @@ class MovieDetail extends Component{
           backgroundImage: 'url('+ movie.backdrop_path +')'
         }}>
         <article className='movie-expanded'>
-        <i className="fas fa-arrow-circle-left fa-3x"
-        role='button'></i>
+        <Link to ={'/'}>
+          <i className="fas fa-arrow-circle-left fa-3x"
+          role='button'>
+          </i>
+        </Link>
         <div className='double-poster-wrapper'>
           <div className='poster-wrapper'>
             <img className='poster' src={movie.poster_path} />
@@ -58,7 +63,7 @@ class MovieDetail extends Component{
       </div>
     )
   }
-  
+
 }
 
 export default MovieDetail;

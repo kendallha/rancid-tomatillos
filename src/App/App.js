@@ -16,7 +16,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(window.location);
     getAllMovies()
     .then(data => {
       this.setState({ movies: data.movies })
@@ -46,7 +45,6 @@ class App extends Component {
           }/>
         <Route path='/:id' render={({ match }) => {
           const { id } = match.params
-          console.log(match);
            return <MovieDetail id={ parseInt(id) } />
         }
         }/>
