@@ -25,4 +25,8 @@ describe('AllMovieView', () => {
     cy.get('.movie').find('h3')
     cy.get('.movie').contains('Release date')
   })
+
+  it('should have the url path of /', () => {
+    cy.location('pathname').should('eq', '/')
+  })
 })

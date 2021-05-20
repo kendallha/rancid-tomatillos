@@ -23,8 +23,8 @@ describe('navigating urls', () => {
   })
 
   it('should be able to go to the movie detail page with a unique url', () => {
-    cy.get('#1').click()
-    cy.url().should('include', '/1')
+    cy.visit('http://localhost:3000/1')
+      .url().should('eq', 'http://localhost:3000/1')
   })
 
   it('should be able to use the browser\'s back and forth buttons to navigate', () => {

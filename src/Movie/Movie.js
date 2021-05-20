@@ -1,10 +1,12 @@
 import React from 'react';
 import './Movie.css';
+import { Link } from 'react-router-dom';
 
-const Movie = ({ handleClick, id, poster, rating, releaseDate, title }) => {
+const Movie = ({ id, poster, rating, releaseDate, title }) => {
 
   return(
-    <article id={id} className='movie' onClick={() => handleClick(id)}>
+    <Link to={`/${id}`}>
+    <article id={id} className='movie'>
       <div className='poster-section'>
       <img className='poster-image' src={poster} />
       <p className='rating'>{rating.toFixed(1)}</p>
@@ -14,6 +16,7 @@ const Movie = ({ handleClick, id, poster, rating, releaseDate, title }) => {
         <p className='release-date'>Release date: {releaseDate}</p>
       </div>
     </article>
+    </Link>
   )
 }
 
