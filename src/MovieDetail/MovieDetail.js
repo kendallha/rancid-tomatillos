@@ -30,7 +30,7 @@ class MovieDetail extends Component{
     }
     return (
       
-      <div className='movie-detail-wrapper'>
+      // <div className='movie-detail-wrapper'>
         <article className='movie-expanded' style={{
           backgroundImage: 'url('+ movie.backdrop_path +')'}}>
         <Link to ={'/'}>
@@ -60,7 +60,7 @@ class MovieDetail extends Component{
           <p className='overview'>{movie.overview}</p>
           </div>
         </article>
-      </div>
+      // </div>
     )
   }
 

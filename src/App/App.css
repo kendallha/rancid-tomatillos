@@ -9,6 +9,8 @@ html, body, .root, .container {
 .main {
   color: #E6E6E6;
   font-family: 'Farro', sans-serif;
+  height: 100%;
+  width: 100%;
 }
 
 .error-message,
