@@ -27,6 +27,6 @@ describe('AllMovieView', () => {
   })
 
   it('should have the url path of /', () => {
-    cy.url().should('eq', 'http://localhost:3000/')
+    cy.location('pathname').should('eq', '/')
   })
 })
