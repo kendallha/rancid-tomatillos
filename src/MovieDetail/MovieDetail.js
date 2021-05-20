@@ -29,10 +29,10 @@ class MovieDetail extends Component{
     return (<h1>Loading...</h1>)
     }
     return (
-      <div className='movie-detail-wrapper' style={{
-          backgroundImage: 'url('+ movie.backdrop_path +')'
-        }}>
-        <article className='movie-expanded'>
+      
+      <div className='movie-detail-wrapper'>
+        <article className='movie-expanded' style={{
+          backgroundImage: 'url('+ movie.backdrop_path +')'}}>
         <Link to ={'/'}>
           <i className="fas fa-arrow-circle-left fa-3x"
           role='button'>

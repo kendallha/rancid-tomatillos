@@ -2,11 +2,10 @@
   height: 100%;
   margin: 0;
   font-family: 'Farro', sans-serif;
-  background-position: center center;
+  /* background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
-  
+  background-size: cover;  */
 }
 
 .fas {
@@ -18,9 +17,15 @@
 }
 
 .movie-expanded{
+  color: black;
   position: absolute;
   height: 100%;
   width: 100%;
+  margin: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; 
 }
 
 .info-section {
