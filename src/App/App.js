@@ -17,40 +17,32 @@ class App extends Component {
 
   componentDidMount() {
     getAllMovies()
-    .then(data => {
-      this.setState({ movies: data.movies })
-    })
-    .catch(() => this.setState(
-      { error: 'Something went wrong, please try again later.' }))
+    .then(data => this.setState({ movies: data.movies }))
+    .catch(() => this.setState({ error: 'Something went wrong, please try again later.' }))
   }
 
   render() {
     return (
-      <div className="container">
-        <main className='main'>
-          {this.state.error &&
-            <h1 className='error-message'>{this.state.error}</h1>}
-
-          {!this.state.movies.length && !this.state.error &&
-            <h1 className='loading-message'>Movies are on the way!</h1>
-            }
+      <main className='main'>
+        {this.state.error &&
+          <h1 className='error-message'>{this.state.error}</h1>}
+        {!this.state.movies.length && !this.state.error &&
+          <h1 className='loading-message'>Movies are on the way!</h1>}
         <Switch>
-         <Route exact path='/' render={() =>
-           { return ( <>
-              <Header />
-              <MovieList movies={ this.state.movies } />
-            </>
-           )
-          }
-          }/>
-        <Route path='/:id' render={({ match }) => {
-          const { id } = match.params
-           return <MovieDetail id={ parseInt(id) } />
-        }
-        }/>
-          </Switch>
-         </main>
-      </div>
+          <Route exact path='/' render={() => {
+            return (
+              <>
+                <Header />
+                <MovieList movies={ this.state.movies } />
+              </>
+            )
+          }}/>
+          <Route path='/:id' render={({ match }) => {
+            const { id } = match.params
+            return <MovieDetail id={ parseInt(id) } />
+          }}/>
+        </Switch>
+      </main>
     )
   }
 }
