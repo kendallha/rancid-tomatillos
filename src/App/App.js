@@ -3,6 +3,7 @@ import MovieList from '../MovieList/MovieList';
 import Header from '../Header/Header';
 import './App.css';
 import MovieDetail from '../MovieDetail/MovieDetail';
+import Search from '../Search/Search';
 import { getAllMovies } from '../api-calls/api-calls';
 import { Route, Switch } from 'react-router-dom';
 
@@ -21,11 +22,9 @@ class App extends Component {
     .catch(() => this.setState({ error: 'Something went wrong, please try again later.' }))
   }
 
-  handleSearch() {
-    //takes in search input
-    // loks through movie state array
-    // finds matches 
-    // setState to new filtered array
+  handleSearch(searchInput) {
+    const searchedMovies = this.state.movies.filter(movie => movie.title.includes(searchInput));
+    this.setState({movies: searchedMovies});
   }
 
   render() {
@@ -40,7 +39,7 @@ class App extends Component {
             return (
               <>
                 <Header />
-                <Search />
+                <Search handleSearch={this.handleSearch}/>
                 <MovieList movies={ this.state.movies } />
               </>
             )
