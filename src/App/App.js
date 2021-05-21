@@ -22,9 +22,11 @@ class App extends Component {
     .catch(() => this.setState({ error: 'Something went wrong, please try again later.' }))
   }
 
-  handleSearch(searchInput) {
-    const searchedMovies = this.state.movies.filter(movie => movie.title.includes(searchInput));
-    this.setState({movies: searchedMovies});
+  handleSearch = (searchInput)  => {
+    !searchInput && {searchedMovies: this.state.movies}
+    const searchedMovies = this.state.movies.filter(movie => movie.title.toUpperCase().includes(searchInput.toUpperCase()));
+    searchedMovies !== [] &&
+    this.setState({searchedMovies: searchedMovies});
   }
 
   render() {
