@@ -49,7 +49,7 @@ class MovieDetail extends Component{
           <p className='tagline'>{movie.tagline}</p>
           <div className='top-card'>
             <div className='main-details'>
-              <p>{movie.genres}</p>
+              <p>{movie.genres.join('/ ')}</p>
               <p>{movie.runtime} minutes</p>
             </div>
             <div className='movie-details-aside'>
