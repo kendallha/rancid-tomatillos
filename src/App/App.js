@@ -5,7 +5,7 @@ import './App.css';
 import MovieDetail from '../MovieDetail/MovieDetail';
 import Search from '../Search/Search';
 import { getAllMovies } from '../api-calls/api-calls';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   handleSearch = (searchInput)  => {
-    !searchInput && this.setState({searchedMovies: this.state.movies})
+    searchInput === '' && this.setState({searchedMovies: this.state.movies})
     const searchedMovies = this.state.movies.filter(movie => movie.title.toUpperCase().includes(searchInput.toUpperCase()));
     searchedMovies !== [] &&
     this.setState({searchedMovies: searchedMovies});
@@ -55,9 +55,13 @@ class App extends Component {
               </>
             )
           }}/>
-          <Route path='/:id' render={({ match }) => {
+          <Route exact path='/:id' render={({ match }) => {
             const { id } = match.params
+            if (!parseInt(id)) {
+              return (<Redirect to='/' />)
+            } else {
             return <MovieDetail id={ parseInt(id) } />
+            }
           }}/>
         </Switch>
       </main>
