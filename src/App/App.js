@@ -21,6 +21,13 @@ class App extends Component {
     .catch(() => this.setState({ error: 'Something went wrong, please try again later.' }))
   }
 
+  handleSearch() {
+    //takes in search input
+    // loks through movie state array
+    // finds matches 
+    // setState to new filtered array
+  }
+
   render() {
     return (
       <main className='main'>
@@ -33,6 +40,7 @@ class App extends Component {
             return (
               <>
                 <Header />
+                <Search />
                 <MovieList movies={ this.state.movies } />
               </>
             )
