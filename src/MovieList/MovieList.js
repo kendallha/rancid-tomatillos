@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
 import Movie from '../Movie/Movie';
+import { Redirect } from 'react-router-dom';
 import './MovieList.css';
 
 const MovieList = ({ movies }) => {
-  const movieTiles = movies.map(movie => {
+  if (!movies) {
+    <Redirect to='/' />
+    return (
+      <h1>Refreshing the main page...</h1>
+    )
+  } else { 
+   const movieTiles = movies.map(movie => {
     return (
       <Movie
         id={movie.id}
@@ -17,6 +24,7 @@ const MovieList = ({ movies }) => {
     )
   })
   return <div className="movie-list">{movieTiles}</div>
+  }
 }
 
 export default MovieList
