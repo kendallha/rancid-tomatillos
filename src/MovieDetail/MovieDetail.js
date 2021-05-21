@@ -12,14 +12,27 @@ class MovieDetail extends Component{
     }
   }
 
+
   componentDidMount() {
     getMovieDetails(this.props.id)
+      .then(response => this.handleErrors(response))
       .then(data => {
         this.setState({ movie: data.movie })
       })
       .catch(() => this.setState(
-        { error: 'Something went wrong, please try again later.' }))
+        { error: 'Something went wrong, please try again.' }))
   }
+
+  handleErrors = (response) => {
+    if (!response.ok) {
+      console.log(response)
+      this.setState(
+        { error: 'Something went wrong, please try again.'}
+      )
+      } else {
+        return response.json()
+      }
+    }
 
   render() {
     const { movie } = this.state;
