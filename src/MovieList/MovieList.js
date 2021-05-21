@@ -5,9 +5,11 @@ import './MovieList.css';
 
 const MovieList = ({ movies }) => {
   if (!movies) {
-    <Redirect to='/' />
     return (
+      <>
+      <Redirect to='/' />
       <h1>Refreshing the main page...</h1>
+      </>
     )
   } else { 
    const movieTiles = movies.map(movie => {

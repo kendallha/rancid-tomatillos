@@ -18,7 +18,7 @@ class Search extends Component {
     return (
       <form className='form'>
         <input type='text' placeholder='Search for a movie title' name='search' value={this.state.searchInput} onChange={e => this.handleChange(e)}/>
-        <Link to={`/${this.state.searchInput}`}>
+        <Link to={`/search/${this.state.searchInput}`}>
           <button className='search-button' type='submit' name='search' onClick={e => this.props.handleSearch(this.state.searchInput)}>Search Movies</button>
         </Link>
       </form>

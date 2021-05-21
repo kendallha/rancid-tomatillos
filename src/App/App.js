@@ -25,7 +25,6 @@ class App extends Component {
   handleSearch = (searchInput)  => {
     !searchInput && this.setState({searchedMovies: this.state.movies})
     const searchedMovies = this.state.movies.filter(movie => movie.title.toUpperCase().includes(searchInput.toUpperCase()));
-    console.log('working')
     searchedMovies !== [] &&
     this.setState({searchedMovies: searchedMovies});
   }
@@ -38,7 +37,7 @@ class App extends Component {
         {!this.state.movies.length && !this.state.error &&
           <h1 className='loading-message'>Movies are on the way!</h1>}
         <Switch>
-        <Route path='/:searchInput' render={({ match }) => {
+        <Route path='/search/:searchInput' render={({ match }) => {
           const searchInput = match.params
             return (
             <>
