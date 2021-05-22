@@ -16,16 +16,12 @@ class MovieDetail extends Component{
   componentDidMount() {
     getMovieDetails(this.props.id)
       .then(response => this.handleErrors(response))
-      .then(data => {
-        this.setState({ movie: data.movie })
-      })
-      .catch(() => this.setState(
-        { error: 'Something went wrong, please try again.' }))
+      .then(data => this.setState({ movie: data.movie }))
+      .catch(error => this.setState({ error: 'Something went wrong, please try again.' }))
   }
 
   handleErrors = (response) => {
     if (!response.ok) {
-      console.log(response)
       this.setState(
         { error: 'Something went wrong, please try again.'}
       )
@@ -39,12 +35,10 @@ class MovieDetail extends Component{
     if (!this.state.movie && this.state.error) {
       return <h1 className='error-message'>{this.state.error}</h1>
     } else if (!this.state.movie) {
-    return (<h1>Loading...</h1>)
+      return (<h1>Loading...</h1>)
     }
     return (
-      
-      // <div className='movie-detail-wrapper'>
-        <article className='movie-expanded' style={{
+      <article className='movie-expanded' style={{
           backgroundImage: 'url('+ movie.backdrop_path +')'}}>
         <Link to ={'/'}>
           <i className="fas fa-arrow-circle-left fa-3x"
@@ -71,9 +65,8 @@ class MovieDetail extends Component{
             </div>
           </div>
           <p className='overview'>{movie.overview}</p>
-          </div>
-        </article>
-      // </div>
+        </div>
+      </article>
     )
   }
 

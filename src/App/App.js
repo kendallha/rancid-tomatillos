@@ -18,12 +18,12 @@ class App extends Component {
 
   componentDidMount() {
     getAllMovies()
-    .then(data => this.setState({ movies: data.movies }))
-    .catch(() => this.setState({ error: 'Something went wrong, please try again later.' }))
+      .then(data => this.setState({ movies: data.movies }))
+      .catch(error => this.setState({ error: 'Something went wrong, please try again later.' }))
   }
 
   handleSearch = (searchInput)  => {
-    searchInput === '' && this.setState({searchedMovies: this.state.movies})
+    !searchInput && this.setState({searchedMovies: this.state.movies})
     const searchedMovies = this.state.movies.filter(movie => movie.title.toUpperCase().includes(searchInput.toUpperCase()));
     searchedMovies !== [] &&
     this.setState({searchedMovies: searchedMovies});

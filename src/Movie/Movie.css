@@ -40,7 +40,7 @@ a {
   font-weight: bolder;
   font-size: 1.5em;
   width: 60px;
-  height: 60px; 
+  height: 60px;
   border-radius: 50%;
   position: absolute;
   top: -4%;
@@ -50,12 +50,3 @@ a {
   align-items: center;
   justify-content: space-evenly;
 }
-
-/* @media only screen and (max-width: 650) {
- .movie {
-   margin-top: 20%;
- }
-} */
-
-
-
