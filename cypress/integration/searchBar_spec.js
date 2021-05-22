@@ -10,4 +10,11 @@ describe('searchBar', () => {
     cy.get('form').find('input')
       .get('form').find('button')
   })
+
+  it('should be able to search the movie titles that contain what is in the search input', () => {
+    cy.get('input').type('Money')
+      .get('button').click()
+      .get('.movie-list').children().should('have.length', 1)
+      .get('.title').contains('Money')
+  })
 })
