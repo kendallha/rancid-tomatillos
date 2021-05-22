@@ -33,4 +33,15 @@ describe('searchBar', () => {
       .get('.movie-list').children().should('have.length', 41)
       .get('.page-title').contains('Popular Movies this Month')
   })
+
+  it('should be able to return to the main page by clicking the title, after searching for a movie', () => {
+    cy.get('input').type('Money')
+      .get('button').click()
+      .get('.app-name').click()
+      .location('pathname').should('eq', '/')
+      .get('.movie-list').children().should('have.length', 41)
+      .get('.page-title').contains('Popular Movies this Month')
+  })
+
+  
 })
