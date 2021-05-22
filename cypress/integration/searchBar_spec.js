@@ -55,4 +55,8 @@ describe('searchBar', () => {
       .get('button').click()
       .get('.page-title').contains('Search results for "Money"')
   })
+
+  it ('should inform the user if there aren\'nt any titles that match their search input', () => {
+    
+  })
 })
