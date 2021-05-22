@@ -43,5 +43,16 @@ describe('searchBar', () => {
       .get('.page-title').contains('Popular Movies this Month')
   })
 
-  
+  it('should take the user to a page with it\'s own url when the user searches', () => {
+    cy.location('pathname').should('eq', '/')
+      .get('input').type('Money')
+      .get('button').click()
+      .location('pathname').should('eq', '/search/Money')
+  })
+
+  it('should show the user what they had typed as a search, on the search results page', () => {
+    cy.get('input').type('Money')
+      .get('button').click()
+      .get('.page-title').contains('Search results for "Money"')
+  })
 })
