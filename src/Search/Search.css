@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5em;
+  height: 5%;
+  font-family: inherit;
+}
+
+input {
+  padding: 1.5%;
+  font-size: 1.1em
+}
+
+.fa-search{
+  margin-top: 25%;
+}

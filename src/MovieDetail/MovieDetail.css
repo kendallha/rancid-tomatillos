@@ -1,4 +1,4 @@
-.fas {
+.fa-arrow-circle-left {
   color: white;
   margin-left: 5%;
   margin-top: 3%;
@@ -15,7 +15,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover; 
+  background-size: cover;
   overflow-x: hidden;
 }
 
@@ -85,7 +85,7 @@
 }
 
 @media only screen and (max-width: 676px) {
-  
+
   .info-section {
     width: 95%;
     position: static;
