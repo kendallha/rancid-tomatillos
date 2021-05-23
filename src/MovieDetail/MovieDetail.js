@@ -25,10 +25,10 @@ class MovieDetail extends Component{
       this.setState(
         { error: 'Something went wrong, please try again.'}
       )
-      } else {
-        return response.json()
-      }
+    } else {
+      return response.json()
     }
+  }
 
   render() {
     const { movie } = this.state;

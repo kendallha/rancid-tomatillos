@@ -4,7 +4,7 @@ describe('AllMovieView', () => {
       cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', { body: movies }).as('movies')
     })
     cy.visit('http://localhost:3000/')
-     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/1', {
+      cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/1', {
         movie: {
         id: 1,
         title: "Fakest Movie Title",
@@ -20,7 +20,6 @@ describe('AllMovieView', () => {
         tagline: "It's a movie!"
         }
       })
-
     cy.get('#1').click();
   })
 

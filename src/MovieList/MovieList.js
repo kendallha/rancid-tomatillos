@@ -14,21 +14,21 @@ const MovieList = ({ movies }) => {
   } else if (!movies.length) {
     return (<h1 className='no-results'>There are no movie titles matching your search</h1>)
   } else if (movies.length) {
-   const movieTiles = movies.map(movie => {
-    return (
-      <Movie
-        id={movie.id}
-        poster={movie.poster_path}
-        backdrop={movie.backdrop_path}
-        title={movie.title}
-        rating={movie.average_rating}
-        releaseDate={movie.release_date}
-        key={movie.id}
-      />
-    )
-  })
+    const movieTiles = movies.map(movie => {
+      return (
+        <Movie
+          id={movie.id}
+          poster={movie.poster_path}
+          backdrop={movie.backdrop_path}
+          title={movie.title}
+          rating={movie.average_rating}
+          releaseDate={movie.release_date}
+          key={movie.id}
+        />
+      )
+    })
   return <div className="movie-list">{movieTiles}</div>
   }
 }
 
-export default MovieList
+export default MovieList;
