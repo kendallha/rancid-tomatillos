@@ -30,7 +30,6 @@ a {
 .poster-image {
   width: 100%;
   box-shadow: 5px 0px 10px 5px rgb(22, 39, 49);
-  /* position: relative; */
   cursor: pointer;
 }
 
