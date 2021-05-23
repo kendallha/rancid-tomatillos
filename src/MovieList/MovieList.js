@@ -12,7 +12,7 @@ const MovieList = ({ movies }) => {
       </>
     )
   } else if (!movies.length) {
-    return (<h1>There are no movie titles matching your search</h1>)
+    return (<h1 className='no-results'>There are no movie titles matching your search</h1>)
   } else if (movies.length) {
    const movieTiles = movies.map(movie => {
     return (

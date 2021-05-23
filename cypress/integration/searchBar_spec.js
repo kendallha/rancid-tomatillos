@@ -57,6 +57,8 @@ describe('searchBar', () => {
   })
 
   it ('should inform the user if there aren\'nt any titles that match their search input', () => {
-    
+    cy.get('input').type('Moneyes')
+      .get('button').click()
+      .get('.no-results').contains('There are no movie titles matching your search')
   })
 })
