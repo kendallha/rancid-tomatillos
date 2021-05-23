@@ -41,7 +41,7 @@ class MovieDetail extends Component{
       <article className='movie-expanded' style={{
           backgroundImage: 'url('+ movie.backdrop_path +')'}}>
         <Link to ={'/'}>
-          <i className="fas fa-arrow-circle-left fa-3x"
+          <i className='fas fa-arrow-circle-left fa-3x'
           role='button'>
           </i>
         </Link>

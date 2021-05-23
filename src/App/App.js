@@ -41,16 +41,16 @@ class App extends Component {
           const searchInput = match.params
             return (
             <>
-                <Header type={searchInput}/>
-                <Search handleSearch={this.handleSearch}/>
-                <MovieList movies={ this.state.searchedMovies } key='SEARCH'/>
+              <Search handleSearch={this.handleSearch}/>
+              <Header type={searchInput}/>
+              <MovieList movies={ this.state.searchedMovies } key='SEARCH'/>
             </>)
           }}/>
           <Route exact path='/' render={() => {
             return (
               <>
-                <Header type='main'/>
                 <Search handleSearch={this.handleSearch}/>
+                <Header type='main'/>
                 <MovieList movies={ this.state.movies } key='MAIN' />
               </>
             )
