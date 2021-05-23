@@ -2,15 +2,44 @@
   display: flex;
   justify-content: flex-end;
   padding: 0.5em;
-  height: 5%;
+  margin-bottom: 0;
+  height: 6%;
   font-family: inherit;
+  align-items: center;
+  margin-right: 3%;
 }
 
 input {
-  padding: 1.5%;
-  font-size: 1.1em
+  font-size: 1.1em;
+  margin: .4%;
 }
 
-.fa-search{
-  margin-top: 25%;
+.search-button {
+  background: #E56635;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 5%;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5%;
+}
+
+@media only screen and (max-width: 676px) {
+  .form {
+    justify-content: center;
+  }
+
+  input {
+    height: 50%;
+    margin-right: 2%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  input {
+    height: 50%;
+    margin-top: 2%;
+    margin-right: 2%;
+  }
 }

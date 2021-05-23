@@ -27,6 +27,7 @@ class App extends Component {
     const searchedMovies = this.state.movies.filter(movie => movie.title.toUpperCase().includes(searchInput.toUpperCase()));
     searchedMovies !== [] &&
     this.setState({searchedMovies: searchedMovies});
+   
   }
 
   render() {

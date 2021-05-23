@@ -25,10 +25,10 @@ class MovieDetail extends Component{
       this.setState(
         { error: 'Something went wrong, please try again.'}
       )
-      } else {
-        return response.json()
-      }
+    } else {
+      return response.json()
     }
+  }
 
   render() {
     const { movie } = this.state;
@@ -42,12 +42,12 @@ class MovieDetail extends Component{
           backgroundImage: 'url('+ movie.backdrop_path +')'}}>
         <Link to ={'/'}>
           <i className='fas fa-arrow-circle-left fa-3x'
-          role='button'>
+          aria-label='Back Button' role='button'>
           </i>
         </Link>
         <div className='double-poster-wrapper'>
           <div className='poster-wrapper'>
-            <img className='poster' src={movie.poster_path} />
+            <img alt={`${movie.title} movie poster`} className='poster' src={movie.poster_path} />
             <p className='average-rating'>{movie.average_rating.toFixed(1)}</p>
           </div>
         </div>
