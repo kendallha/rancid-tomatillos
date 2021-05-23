@@ -1,9 +1,20 @@
-import React from 'react'
+import React from 'react';
 import Movie from '../Movie/Movie';
+import { Redirect } from 'react-router-dom';
 import './MovieList.css';
 
 const MovieList = ({ movies }) => {
-  const movieTiles = movies.map(movie => {
+  if (!movies) {
+    return (
+      <>
+      <Redirect to='/' />
+      <h1>Refreshing the main page...</h1>
+      </>
+    )
+  } else if (!movies.length) {
+    return (<h1 className='no-results'>There are no movie titles matching your search</h1>)
+  } else if (movies.length) {
+   const movieTiles = movies.map(movie => {
     return (
       <Movie
         id={movie.id}
@@ -17,6 +28,7 @@ const MovieList = ({ movies }) => {
     )
   })
   return <div className="movie-list">{movieTiles}</div>
+  }
 }
 
 export default MovieList

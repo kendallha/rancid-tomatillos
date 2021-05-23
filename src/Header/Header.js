@@ -1,11 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
-const Header = () => {
+const Header = ({ type }) => {
   return (
     <header className='header'>
-      <h1 className='app-name'>Rancid Tomatillos</h1>
-      <h2 className='page-title'>Popular Movies this Month</h2>
+      <Link to='/'>
+        <h1 className='app-name'>rancid tomatillos</h1>
+      </Link>
+        {type === 'main' &&
+          <h2 className='page-title'>Popular Movies this Month</h2>}
+        {type !== 'main' &&
+          <h2 className='page-title'>Search results for "{type.searchInput}"</h2>}
     </header>
   )
 }

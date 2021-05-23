@@ -13,3 +13,20 @@
 .app-name {
   padding-left: 2em;
 }
+
+@media only screen and (max-width: 676px) {
+ .page-title {
+   font-size: 2em;
+ }
+
+ .app-name {
+   padding-left: 0;
+   text-align: center;
+ }
+}
+
+@media only screen and (max-width: 435px) {
+  .page-title {
+   font-size: 1.5em;
+  }
+}
