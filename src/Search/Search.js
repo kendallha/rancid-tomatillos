@@ -19,7 +19,7 @@ class Search extends Component {
       <form className='form'>
         <input type='text' placeholder='Search for a movie title' name='search' value={this.state.searchInput} onChange={e => this.handleChange(e)}/>
         <Link to={`/search/${this.state.searchInput}`}>
-            <i className='fas fa-search fa-2x' type='submit' name='search' onClick={e => this.props.handleSearch(this.state.searchInput)}></i>
+            <i role='button' className='fas fa-search fa-2x' type='submit' name='search' onClick={e => this.props.handleSearch(this.state.searchInput)}></i>
         </Link>
       </form>
     )
