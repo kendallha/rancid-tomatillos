@@ -8,9 +8,29 @@
 
 input {
   padding: 1.5%;
-  font-size: 1.1em
+  font-size: 1.1em;
+  margin: .4%;
 }
 
 .fa-search{
   margin-top: 25%;
+}
+
+@media only screen and (max-width: 676px) {
+  .form {
+      justify-content: center;
+  }
+
+  input {
+    height: 50%;
+    margin-right: 2%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  input {
+    height: 50%;
+    margin-top: 2%;
+    margin-right: 2%;
+  }
 }
