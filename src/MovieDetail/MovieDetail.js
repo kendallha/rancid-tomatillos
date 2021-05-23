@@ -47,7 +47,7 @@ class MovieDetail extends Component{
         </Link>
         <div className='double-poster-wrapper'>
           <div className='poster-wrapper'>
-            <img className='poster' src={movie.poster_path} />
+            <img alt={`${movie.title} movie poster`} className='poster' src={movie.poster_path} />
             <p className='average-rating'>{movie.average_rating.toFixed(1)}</p>
           </div>
         </div>
