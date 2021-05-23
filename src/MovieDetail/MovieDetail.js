@@ -42,7 +42,7 @@ class MovieDetail extends Component{
           backgroundImage: 'url('+ movie.backdrop_path +')'}}>
         <Link to ={'/'}>
           <i className='fas fa-arrow-circle-left fa-3x'
-          role='button'>
+          aria-label='Back Button' role='button'>
           </i>
         </Link>
         <div className='double-poster-wrapper'>
