@@ -46,7 +46,11 @@ For this project, our team built a movie review app using React and React Router
 
 # Responsive Design
 
-<img src="https://user-images.githubusercontent.com/25498241/115470103-a6ee8200-a1ea-11eb-8d40-a68ec6168f18.png" height="250">
+<img src='https://user-images.githubusercontent.com/25498241/119402432-c5d0b000-bc91-11eb-948c-bb717ae6790d.png' width='500'>
+<img src='https://user-images.githubusercontent.com/25498241/119402475-d719bc80-bc91-11eb-969d-8e6bf02c1e70.png' width='350'>
+<img src='https://user-images.githubusercontent.com/25498241/119402485-daad4380-bc91-11eb-9b58-ff9603b94b65.png' height='300'>
+<img src='https://user-images.githubusercontent.com/25498241/119402492-dc770700-bc91-11eb-8e62-c3b75dc478dc.png' height='300'>
+
 
 ## Technologies Used
 
