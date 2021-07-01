@@ -1,4 +1,4 @@
-describe('AllMovieView', () => {
+describe('SingleMovieView', () => {
   beforeEach(() => {
     cy.fixture('movies').then((movies) => {
       cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', { body: movies }).as('movies')
@@ -42,7 +42,7 @@ describe('AllMovieView', () => {
 
   it('should go back to showing all movies when the back button is clicked', () => {
     cy.get('i').click()
-      .get('.app-name').contains('Rancid Tomatillos')
+      .get('.app-name').contains('rancid tomatillos')
       .get('.page-title').contains('Popular Movies this Month')
       .get('.movie-list').children().should('have.length', 41)
       .get('.movie-expanded').should('not.exist');

@@ -12,7 +12,6 @@ class MovieDetail extends Component{
     }
   }
 
-
   componentDidMount() {
     getMovieDetails(this.props.id)
       .then(response => this.handleErrors(response))

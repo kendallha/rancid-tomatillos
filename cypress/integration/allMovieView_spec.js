@@ -8,7 +8,7 @@ describe('AllMovieView', () => {
   })
 
   it('should display the app name when the page loads', () => {
-    cy.get('.app-name').contains('Rancid Tomatillos')
+    cy.get('.app-name').contains('rancid tomatillos')
   })
 
   it('should display the page heading when the page loads', () => {
